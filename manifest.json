@@ -8,6 +8,6 @@
       "scripts": ["appStorage.js", "test2.js"]
     }
   },
-  "icons": { "48": "i128.png", "16": "i128.png", "128": "i128.png" },
+  "icons": { "48": "imgs/i128.png", "16": "imgs/i128.png", "128": "imgs/i128.png" },
   "permissions": ["storage"]
 }
