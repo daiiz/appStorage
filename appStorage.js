@@ -1,7 +1,12 @@
 var appStorage = (function(key_value_json, operation, callback) {
 
 	var json = key_value_json;
-	var key = key_value_json.key
+    var key = "APPSTORAGE_DEFAULT";
+    if(typeof json == "object") {
+	    key = key_value_json.key;
+    }else if(typeof json == "string"){
+        key = key_value_json;
+    }
 	var val = key_value_json.value || "";
 
 	function isChromeApp() {
@@ -53,6 +58,7 @@ var appStorage = (function(key_value_json, operation, callback) {
     // browser の場合の処理
     //
     function browser() {
+        // checkDegitを付加しておく
     	if(typeof val == "object" || typeof val == "number") {
            val = JSON.stringify(val);
            val = val + "1";
