@@ -2,15 +2,15 @@
     //
     // SET
     //
-    appStorage({"key": key, "value": value}, "set", function() {
+    appStorage({"key": key, "value": value}, "set", function(item, keys) {
     	//
         // GET
         //
-        appStorage({"key": "test1"}, "get", function() {
+        appStorage({"key": keys[0]}, "get", function(item, keys) {
         	//
             // REMOVE
             //
-            appStorage({"key": "test1"}, "remove")
+            appStorage({"key": keys[0]}, "remove")
         });
     });
 })("test1", [{"name": ["da","iz"]}, 1, "test"]);

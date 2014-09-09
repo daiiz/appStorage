@@ -1,11 +1,11 @@
 ﻿{
-  "name": "ChromeAppsBase",
-  "description": "基本パッケージ. sources/main.htmlを表示します.",
-  "version": "1.1.1",
+  "name": "appStorage.js",
+  "description": "appStorage.js Demo for ChromeApps",
+  "version": "0.0.1",
   "manifest_version": 2,
   "app": {
     "background": {
-      "scripts": ["appStorage.js", "test1.js"]
+      "scripts": ["appStorage.js", "test2.js"]
     }
   },
   "icons": { "48": "i128.png", "16": "i128.png", "128": "i128.png" },

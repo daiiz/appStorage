@@ -1,3 +1,7 @@
+// 
+// Copyright (c) 2014 daiz. All rights reserved.
+// This code may only be used under the BSD style license.
+//
 var appStorage = (function(key_value_json, operation, callback) {
 
 	var json = key_value_json;
