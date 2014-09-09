@@ -1,0 +1,13 @@
+﻿{
+  "name": "ChromeAppsBase",
+  "description": "基本パッケージ. sources/main.htmlを表示します.",
+  "version": "1.1.1",
+  "manifest_version": 2,
+  "app": {
+    "background": {
+      "scripts": ["appStorage.js"]
+    }
+  },
+  "icons": { "48": "i128.jpg", "16": "i128.jpg", "128": "i128.jpg" },
+  "permissions": ["storage"]
+}
