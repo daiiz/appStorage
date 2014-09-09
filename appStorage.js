@@ -31,7 +31,7 @@ var appStorage = (function(key_value_json, operation, callback) {
     function chromeApp() {
         var storageArea = chrome.storage.local;
         switch(operation) {
-         　 case "set": 
+           case "set": 
                 var item = {};
                 item[key] = val;
                 chrome_item = item;
