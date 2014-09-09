@@ -5,9 +5,9 @@
   "manifest_version": 2,
   "app": {
     "background": {
-      "scripts": ["appStorage.js"]
+      "scripts": ["appStorage.js", "test1.js"]
     }
   },
-  "icons": { "48": "i128.jpg", "16": "i128.jpg", "128": "i128.jpg" },
+  "icons": { "48": "i128.png", "16": "i128.png", "128": "i128.png" },
   "permissions": ["storage"]
 }

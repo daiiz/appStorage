@@ -98,9 +98,10 @@ var appStorage = (function(key_value_json, operation, callback) {
     function transactionCompleted(j) {
         console.group("["+operation+"] transaction completed.");
         console.dirxml(j);
+        console.dirxml(Object.keys(j));
         if(callback != undefined) {
         	console.groupEnd("["+operation+"] transaction completed.");
-            callback(j);
+            callback(j, Object.keys(j));
         }else {
             console.info("'callback' does not exist.");
             console.groupEnd("["+operation+"] transaction completed.");
