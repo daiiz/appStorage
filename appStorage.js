@@ -1,4 +1,4 @@
-// 
+//
 // Copyright (c) 2014 daiz. All rights reserved.
 // This code may only be used under the BSD style license.
 //
@@ -15,15 +15,15 @@ var appStorage = (function(key_value_json, operation, callback) {
 
     function isChromeApp() {
         var res = false;
-        if(chrome != undefined) {
-           if(chrome.app.window != undefined) {
+        if(window.chrome != undefined) {
+           if(window.chrome.app.window != undefined) {
              // 「chrome アプリ」である
              res = true;
            }
         }
         return res;
     }
-    
+
     //
     // chrome app の場合の処理
     //
@@ -31,16 +31,16 @@ var appStorage = (function(key_value_json, operation, callback) {
     function chromeApp() {
         var storageArea = chrome.storage.local;
         switch(operation) {
-           case "set": 
+           case "set":
                 var item = {};
                 item[key] = val;
                 chrome_item = item;
                 storageArea.set(item, chrome_transactionCompleted);
                 break;
-           case "get": 
+           case "get":
                 storageArea.get(key, chrome_transactionCompleted);
                 break;
-           case "remove": 
+           case "remove":
                 chrome_item[key] = null;
                 storageArea.remove(key, chrome_transactionCompleted);
                 break;
@@ -57,7 +57,7 @@ var appStorage = (function(key_value_json, operation, callback) {
        }
        transactionCompleted(res);
     }
-    
+
     //
     // browser の場合の処理
     //
@@ -72,13 +72,13 @@ var appStorage = (function(key_value_json, operation, callback) {
         var item = {};
 
         switch(operation) {
-            case "set": 
+            case "set":
                  localStorage.setItem(key, val);
                  item[key] = json.value;
                  transactionCompleted(item);
                  break;
 
-            case "get": 
+            case "get":
                  var v = localStorage.getItem(key);
                  if(v != undefined) {
                     var checkDigit = +(v[v.length - 1]);
@@ -101,20 +101,20 @@ var appStorage = (function(key_value_json, operation, callback) {
         }
 
     }
-    
+
     //
     // どちらの場合でも実行する処理
     //
     function transactionCompleted(j) {
-        console.group("["+operation+"] transaction completed.");
-        console.dirxml(j);
-        console.dirxml(Object.keys(j));
+        //console.group("["+operation+"] transaction completed.");
+        //console.dirxml(j);
+        //console.dirxml(Object.keys(j));
         if(callback != undefined) {
-            console.groupEnd("["+operation+"] transaction completed.");
+            //console.groupEnd("["+operation+"] transaction completed.");
             callback(j, Object.keys(j));
         }else {
-            console.info("'callback' does not exist.");
-            console.groupEnd("["+operation+"] transaction completed.");
+            //console.info("'callback' does not exist.");
+            //console.groupEnd("["+operation+"] transaction completed.");
         }
     }
 
@@ -125,7 +125,7 @@ var appStorage = (function(key_value_json, operation, callback) {
             browser();
         }
     }
- 
+
     main();
     //transactionCompleted();
 });
