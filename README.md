@@ -1,5 +1,6 @@
 appStorage
 ==========
+
 #### Exapmle:
 ```
 (function(key, value) {
